@@ -1,0 +1,1024 @@
+---
+title: "Capstone Project"
+author: "Garrett Carpenter"
+date: "2024-05-08"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+R version 4.3.3 (2024-02-29 ucrt) -- "Angel Food Cake"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(readr)
+> X202304_divvy_tripdata <- read_csv("C:/Users/garre/Downloads/202304-divvy-tripdata.zip")
+Multiple files in zip: reading '202304-divvy-tripdata.csv'
+Rows: 426590 Columns: 13                           
+── Column specification ─────────────────────────────
+Delimiter: ","
+chr  (7): ride_id, rideable_type, start_station_n...
+dbl  (4): start_lat, start_lng, end_lat, end_lng
+dttm (2): started_at, ended_at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+> View(X202304_divvy_tripdata)
+> library(readr)
+> X202305_divvy_tripdata <- read_csv("C:/Users/garre/Downloads/202305-divvy-tripdata.zip")
+Multiple files in zip: reading '202305-divvy-tripdata.csv'
+Rows: 604827 Columns: 13                           
+── Column specification ─────────────────────────────
+Delimiter: ","
+chr  (7): ride_id, rideable_type, start_station_n...
+dbl  (4): start_lat, start_lng, end_lat, end_lng
+dttm (2): started_at, ended_at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+> View(X202305_divvy_tripdata)
+> library(readr)
+> X202306_divvy_tripdata <- read_csv("C:/Users/garre/Downloads/202306-divvy-tripdata.zip")
+Multiple files in zip: reading '202306-divvy-tripdata.csv'
+Rows: 719618 Columns: 13                           
+── Column specification ─────────────────────────────
+Delimiter: ","
+chr  (7): ride_id, rideable_type, start_station_n...
+dbl  (4): start_lat, start_lng, end_lat, end_lng
+dttm (2): started_at, ended_at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+> View(X202306_divvy_tripdata)
+> library(readr)
+> X202401_divvy_tripdata <- read_csv("C:/Users/garre/Downloads/202401-divvy-tripdata.zip")
+Multiple files in zip: reading '202401-divvy-tripdata.csv'
+Rows: 144873 Columns: 13                           
+── Column specification ─────────────────────────────
+Delimiter: ","
+chr  (7): ride_id, rideable_type, start_station_n...
+dbl  (4): start_lat, start_lng, end_lat, end_lng
+dttm (2): started_at, ended_at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+> View(X202401_divvy_tripdata)
+> library(readr)
+> X202312_divvy_tripdata <- read_csv("C:/Users/garre/Downloads/202312-divvy-tripdata.zip")
+Multiple files in zip: reading '202312-divvy-tripdata.csv'
+Rows: 224073 Columns: 13                           
+── Column specification ─────────────────────────────
+Delimiter: ","
+chr  (7): ride_id, rideable_type, start_station_n...
+dbl  (4): start_lat, start_lng, end_lat, end_lng
+dttm (2): started_at, ended_at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+> View(X202312_divvy_tripdata)
+> library(readr)
+> X202311_divvy_tripdata <- read_csv("C:/Users/garre/Downloads/202311-divvy-tripdata.zip")
+Multiple files in zip: reading '202311-divvy-tripdata.csv'
+Rows: 362518 Columns: 13                           
+── Column specification ─────────────────────────────
+Delimiter: ","
+chr  (7): ride_id, rideable_type, start_station_n...
+dbl  (4): start_lat, start_lng, end_lat, end_lng
+dttm (2): started_at, ended_at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+> View(X202311_divvy_tripdata)
+> library(readr)
+> X202308_divvy_tripdata <- read_csv("C:/Users/garre/Downloads/202308-divvy-tripdata.zip")
+Multiple files in zip: reading '202308-divvy-tripdata.csv'
+Rows: 771693 Columns: 13                           
+── Column specification ─────────────────────────────
+Delimiter: ","
+chr  (7): ride_id, rideable_type, start_station_n...
+dbl  (4): start_lat, start_lng, end_lat, end_lng
+dttm (2): started_at, ended_at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+> View(X202308_divvy_tripdata)
+> library(readr)
+> X202307_divvy_tripdata <- read_csv("C:/Users/garre/Downloads/202307-divvy-tripdata.zip")
+Multiple files in zip: reading '202307-divvy-tripdata.csv'
+Rows: 767650 Columns: 13                           
+── Column specification ─────────────────────────────
+Delimiter: ","
+chr  (7): ride_id, rideable_type, start_station_n...
+dbl  (4): start_lat, start_lng, end_lat, end_lng
+dttm (2): started_at, ended_at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+> View(X202307_divvy_tripdata)
+> library(readr)
+> X202310_divvy_tripdata <- read_csv("C:/Users/garre/Downloads/202310-divvy-tripdata.zip")
+Multiple files in zip: reading '202310-divvy-tripdata.csv'
+Rows: 537113 Columns: 13                           
+── Column specification ─────────────────────────────
+Delimiter: ","
+chr  (7): ride_id, rideable_type, start_station_n...
+dbl  (4): start_lat, start_lng, end_lat, end_lng
+dttm (2): started_at, ended_at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+> View(X202310_divvy_tripdata)
+> library(readr)
+> X202309_divvy_tripdata <- read_csv("C:/Users/garre/Downloads/202309-divvy-tripdata.zip")
+Multiple files in zip: reading '202309-divvy-tripdata.csv'
+Rows: 666371 Columns: 13                           
+── Column specification ─────────────────────────────
+Delimiter: ","
+chr  (7): ride_id, rideable_type, start_station_n...
+dbl  (4): start_lat, start_lng, end_lat, end_lng
+dttm (2): started_at, ended_at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+> View(X202309_divvy_tripdata)
+> library(readr)
+> X202403_divvy_tripdata <- read_csv("C:/Users/garre/Downloads/202403-divvy-tripdata.zip")
+Multiple files in zip: reading '202403-divvy-tripdata.csv'
+Rows: 301687 Columns: 13                           
+── Column specification ─────────────────────────────
+Delimiter: ","
+chr  (7): ride_id, rideable_type, start_station_n...
+dbl  (4): start_lat, start_lng, end_lat, end_lng
+dttm (2): started_at, ended_at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+> View(X202403_divvy_tripdata)
+> library(readr)
+> X202402_divvy_tripdata <- read_csv("C:/Users/garre/Downloads/202402-divvy-tripdata.zip")
+Multiple files in zip: reading '202402-divvy-tripdata.csv'
+Rows: 223164 Columns: 13                           
+── Column specification ─────────────────────────────
+Delimiter: ","
+chr  (7): ride_id, rideable_type, start_station_n...
+dbl  (4): start_lat, start_lng, end_lat, end_lng
+dttm (2): started_at, ended_at
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+> View(X202402_divvy_tripdata)
+> install.packages("tidyverse")
+Error in install.packages : Updating loaded packages
+> library(tidyverse)
+── Attaching core tidyverse packages ────────────────
+✔ dplyr     1.1.4     ✔ purrr     1.0.2
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+── Conflicts ─────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package to force all conflicts to become errors
+> 
+> install.packages("lubridate")
+Error in install.packages : Updating loaded packages
+> library(lubridate)
+> 
+> install.packages("ggplot2")
+Error in install.packages : Updating loaded packages
+> library(ggplot2)
+
+Restarting R session...
+
+> install.packages("ggplot2")
+WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+Installing package into ‘C:/Users/garre/AppData/Local/R/win-library/4.3’
+(as ‘lib’ is unspecified)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.3/ggplot2_3.5.1.zip'
+Content type 'application/zip' length 4953509 bytes (4.7 MB)
+downloaded 4.7 MB
+
+package ‘ggplot2’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\garre\AppData\Local\Temp\RtmpmQuW9E\downloaded_packages
+> all_trips<- bind(X202304_divvy_tripdata,X202305_divvy_tripdata,X202306_divvy_tripdata,X202307_divvy_tripdata,X202309_divvy_tripdata,X202308_divvy_tripdata,X202310_divvy_tripdata,X202311_divvy_tripdata,X202312_divvy_tripdata,X202401_divvy_tripdata,X202402_divvy_tripdata,X202403_divvy_tripdata)
+Error in bind(X202304_divvy_tripdata, X202305_divvy_tripdata, X202306_divvy_tripdata,  : 
+  could not find function "bind"
+> all_trips<- bind_rows(X202304_divvy_tripdata,X202305_divvy_tripdata,X202306_divvy_tripdata,X202307_divvy_tripdata,X202309_divvy_tripdata,X202308_divvy_tripdata,X202310_divvy_tripdata,X202311_divvy_tripdata,X202312_divvy_tripdata,X202401_divvy_tripdata,X202402_divvy_tripdata,X202403_divvy_tripdata)
+Error in bind_rows(X202304_divvy_tripdata, X202305_divvy_tripdata, X202306_divvy_tripdata,  : 
+  could not find function "bind_rows"
+> all_trips<- rbind(X202304_divvy_tripdata,X202305_divvy_tripdata,X202306_divvy_tripdata,X202307_divvy_tripdata,X202309_divvy_tripdata,X202308_divvy_tripdata,X202310_divvy_tripdata,X202311_divvy_tripdata,X202312_divvy_tripdata,X202401_divvy_tripdata,X202402_divvy_tripdata,X202403_divvy_tripdata)
+> all_trips$date <- as.Date(all_trips$started_at)
+> all_trips$month <- format(as.Date(all_trips$date), "%m")
+> all_trips$day <- format(as.Date(all_trips$date), "%d")
+> all_trips$year <- format(as.Date(all_trips$date), "%Y")
+> all_trips$day_of_week <- format(as.Date(all_trips$date), "%A")
+> all_trips$ride_length <- difftime(all_trips$ended_at,all_trips$started_at)
+> str(all_trips)
+Classes ‘spec_tbl_df’, ‘tbl_df’, ‘tbl’ and 'data.frame':	5750177 obs. of  19 variables:
+ $ ride_id           : chr  "8FE8F7D9C10E88C7" "34E4ED3ADF1D821B" "5296BF07A2F77CB5" "40759916B76D5D52" ...
+ $ rideable_type     : chr  "electric_bike" "electric_bike" "electric_bike" "electric_bike" ...
+ $ started_at        : POSIXct, format:  ...
+ $ ended_at          : POSIXct, format:  ...
+ $ start_station_name: chr  NA NA NA NA ...
+ $ start_station_id  : chr  NA NA NA NA ...
+ $ end_station_name  : chr  NA NA NA NA ...
+ $ end_station_id    : chr  NA NA NA NA ...
+ $ start_lat         : num  41.8 41.9 41.9 41.9 41.9 ...
+ $ start_lng         : num  -87.6 -87.7 -87.7 -87.7 -87.7 ...
+ $ end_lat           : num  41.8 41.9 41.9 41.9 41.9 ...
+ $ end_lng           : num  -87.6 -87.7 -87.7 -87.7 -87.6 ...
+ $ member_casual     : chr  "member" "member" "member" "member" ...
+ $ date              : Date, format:  ...
+ $ month             : chr  "04" "04" "04" "04" ...
+ $ day               : chr  "02" "19" "19" "19" ...
+ $ year              : chr  "2023" "2023" "2023" "2023" ...
+ $ day_of_week       : chr  "Sunday" "Wednesday" "Wednesday" "Wednesday" ...
+ $ ride_length       : 'difftime' num  249 1390 120 219 ...
+  ..- attr(*, "units")= chr "secs"
+ - attr(*, "spec")=List of 3
+  ..$ cols   :List of 13
+  .. ..$ ride_id           : list()
+  .. .. ..- attr(*, "class")= chr [1:2] "collector_character" "collector"
+  .. ..$ rideable_type     : list()
+  .. .. ..- attr(*, "class")= chr [1:2] "collector_character" "collector"
+  .. ..$ started_at        :List of 1
+  .. .. ..$ format: chr ""
+  .. .. ..- attr(*, "class")= chr [1:2] "collector_datetime" "collector"
+  .. ..$ ended_at          :List of 1
+  .. .. ..$ format: chr ""
+  .. .. ..- attr(*, "class")= chr [1:2] "collector_datetime" "collector"
+  .. ..$ start_station_name: list()
+  .. .. ..- attr(*, "class")= chr [1:2] "collector_character" "collector"
+  .. ..$ start_station_id  : list()
+  .. .. ..- attr(*, "class")= chr [1:2] "collector_character" "collector"
+  .. ..$ end_station_name  : list()
+  .. .. ..- attr(*, "class")= chr [1:2] "collector_character" "collector"
+  .. ..$ end_station_id    : list()
+  .. .. ..- attr(*, "class")= chr [1:2] "collector_character" "collector"
+  .. ..$ start_lat         : list()
+  .. .. ..- attr(*, "class")= chr [1:2] "collector_double" "collector"
+  .. ..$ start_lng         : list()
+  .. .. ..- attr(*, "class")= chr [1:2] "collector_double" "collector"
+  .. ..$ end_lat           : list()
+  .. .. ..- attr(*, "class")= chr [1:2] "collector_double" "collector"
+  .. ..$ end_lng           : list()
+  .. .. ..- attr(*, "class")= chr [1:2] "collector_double" "collector"
+  .. ..$ member_casual     : list()
+  .. .. ..- attr(*, "class")= chr [1:2] "collector_character" "collector"
+  ..$ default: list()
+  .. ..- attr(*, "class")= chr [1:2] "collector_guess" "collector"
+  ..$ delim  : chr ","
+  ..- attr(*, "class")= chr "col_spec"
+ - attr(*, "problems")=<externalptr> 
+> all_trips$ride_length <- as.numeric(as.character(all_trips$ride_length))
+> is.numeric(all_trips$ride_length)
+[1] TRUE
+> #remove bad data
+> all_trips[!(all_trips$start_station_name == "HQ QR" | all_trips$ride_length<0),]
+               ride_id rideable_type
+NA                <NA>          <NA>
+NA.1              <NA>          <NA>
+NA.2              <NA>          <NA>
+NA.3              <NA>          <NA>
+NA.4              <NA>          <NA>
+NA.5              <NA>          <NA>
+NA.6              <NA>          <NA>
+NA.7              <NA>          <NA>
+NA.8              <NA>          <NA>
+NA.9              <NA>          <NA>
+NA.10             <NA>          <NA>
+NA.11             <NA>          <NA>
+NA.12             <NA>          <NA>
+NA.13             <NA>          <NA>
+NA.14             <NA>          <NA>
+NA.15             <NA>          <NA>
+NA.16             <NA>          <NA>
+NA.17             <NA>          <NA>
+NA.18             <NA>          <NA>
+NA.19             <NA>          <NA>
+NA.20             <NA>          <NA>
+NA.21             <NA>          <NA>
+NA.22             <NA>          <NA>
+NA.23             <NA>          <NA>
+NA.24             <NA>          <NA>
+NA.25             <NA>          <NA>
+NA.26             <NA>          <NA>
+NA.27             <NA>          <NA>
+29    8936AA6E8D57572E electric_bike
+NA.28             <NA>          <NA>
+NA.29             <NA>          <NA>
+NA.30             <NA>          <NA>
+NA.31             <NA>          <NA>
+NA.32             <NA>          <NA>
+NA.33             <NA>          <NA>
+NA.34             <NA>          <NA>
+NA.35             <NA>          <NA>
+NA.36             <NA>          <NA>
+NA.37             <NA>          <NA>
+NA.38             <NA>          <NA>
+NA.39             <NA>          <NA>
+NA.40             <NA>          <NA>
+NA.41             <NA>          <NA>
+NA.42             <NA>          <NA>
+NA.43             <NA>          <NA>
+NA.44             <NA>          <NA>
+NA.45             <NA>          <NA>
+NA.46             <NA>          <NA>
+NA.47             <NA>          <NA>
+NA.48             <NA>          <NA>
+NA.49             <NA>          <NA>
+NA.50             <NA>          <NA>
+               started_at            ended_at
+NA                   <NA>                <NA>
+NA.1                 <NA>                <NA>
+NA.2                 <NA>                <NA>
+NA.3                 <NA>                <NA>
+NA.4                 <NA>                <NA>
+NA.5                 <NA>                <NA>
+NA.6                 <NA>                <NA>
+NA.7                 <NA>                <NA>
+NA.8                 <NA>                <NA>
+NA.9                 <NA>                <NA>
+NA.10                <NA>                <NA>
+NA.11                <NA>                <NA>
+NA.12                <NA>                <NA>
+NA.13                <NA>                <NA>
+NA.14                <NA>                <NA>
+NA.15                <NA>                <NA>
+NA.16                <NA>                <NA>
+NA.17                <NA>                <NA>
+NA.18                <NA>                <NA>
+NA.19                <NA>                <NA>
+NA.20                <NA>                <NA>
+NA.21                <NA>                <NA>
+NA.22                <NA>                <NA>
+NA.23                <NA>                <NA>
+NA.24                <NA>                <NA>
+NA.25                <NA>                <NA>
+NA.26                <NA>                <NA>
+NA.27                <NA>                <NA>
+29    2023-04-21 20:40:44 2023-04-21 20:48:44
+NA.28                <NA>                <NA>
+NA.29                <NA>                <NA>
+NA.30                <NA>                <NA>
+NA.31                <NA>                <NA>
+NA.32                <NA>                <NA>
+NA.33                <NA>                <NA>
+NA.34                <NA>                <NA>
+NA.35                <NA>                <NA>
+NA.36                <NA>                <NA>
+NA.37                <NA>                <NA>
+NA.38                <NA>                <NA>
+NA.39                <NA>                <NA>
+NA.40                <NA>                <NA>
+NA.41                <NA>                <NA>
+NA.42                <NA>                <NA>
+NA.43                <NA>                <NA>
+NA.44                <NA>                <NA>
+NA.45                <NA>                <NA>
+NA.46                <NA>                <NA>
+NA.47                <NA>                <NA>
+NA.48                <NA>                <NA>
+NA.49                <NA>                <NA>
+NA.50                <NA>                <NA>
+        start_station_name start_station_id
+NA                    <NA>             <NA>
+NA.1                  <NA>             <NA>
+NA.2                  <NA>             <NA>
+NA.3                  <NA>             <NA>
+NA.4                  <NA>             <NA>
+NA.5                  <NA>             <NA>
+NA.6                  <NA>             <NA>
+NA.7                  <NA>             <NA>
+NA.8                  <NA>             <NA>
+NA.9                  <NA>             <NA>
+NA.10                 <NA>             <NA>
+NA.11                 <NA>             <NA>
+NA.12                 <NA>             <NA>
+NA.13                 <NA>             <NA>
+NA.14                 <NA>             <NA>
+NA.15                 <NA>             <NA>
+NA.16                 <NA>             <NA>
+NA.17                 <NA>             <NA>
+NA.18                 <NA>             <NA>
+NA.19                 <NA>             <NA>
+NA.20                 <NA>             <NA>
+NA.21                 <NA>             <NA>
+NA.22                 <NA>             <NA>
+NA.23                 <NA>             <NA>
+NA.24                 <NA>             <NA>
+NA.25                 <NA>             <NA>
+NA.26                 <NA>             <NA>
+NA.27                 <NA>             <NA>
+29    Kenosha & Wellington              361
+NA.28                 <NA>             <NA>
+NA.29                 <NA>             <NA>
+NA.30                 <NA>             <NA>
+NA.31                 <NA>             <NA>
+NA.32                 <NA>             <NA>
+NA.33                 <NA>             <NA>
+NA.34                 <NA>             <NA>
+NA.35                 <NA>             <NA>
+NA.36                 <NA>             <NA>
+NA.37                 <NA>             <NA>
+NA.38                 <NA>             <NA>
+NA.39                 <NA>             <NA>
+NA.40                 <NA>             <NA>
+NA.41                 <NA>             <NA>
+NA.42                 <NA>             <NA>
+NA.43                 <NA>             <NA>
+NA.44                 <NA>             <NA>
+NA.45                 <NA>             <NA>
+NA.46                 <NA>             <NA>
+NA.47                 <NA>             <NA>
+NA.48                 <NA>             <NA>
+NA.49                 <NA>             <NA>
+NA.50                 <NA>             <NA>
+      end_station_name end_station_id start_lat
+NA                <NA>           <NA>        NA
+NA.1              <NA>           <NA>        NA
+NA.2              <NA>           <NA>        NA
+NA.3              <NA>           <NA>        NA
+NA.4              <NA>           <NA>        NA
+NA.5              <NA>           <NA>        NA
+NA.6              <NA>           <NA>        NA
+NA.7              <NA>           <NA>        NA
+NA.8              <NA>           <NA>        NA
+NA.9              <NA>           <NA>        NA
+NA.10             <NA>           <NA>        NA
+NA.11             <NA>           <NA>        NA
+NA.12             <NA>           <NA>        NA
+NA.13             <NA>           <NA>        NA
+NA.14             <NA>           <NA>        NA
+NA.15             <NA>           <NA>        NA
+NA.16             <NA>           <NA>        NA
+NA.17             <NA>           <NA>        NA
+NA.18             <NA>           <NA>        NA
+NA.19             <NA>           <NA>        NA
+NA.20             <NA>           <NA>        NA
+NA.21             <NA>           <NA>        NA
+NA.22             <NA>           <NA>        NA
+NA.23             <NA>           <NA>        NA
+NA.24             <NA>           <NA>        NA
+NA.25             <NA>           <NA>        NA
+NA.26             <NA>           <NA>        NA
+NA.27             <NA>           <NA>        NA
+29                <NA>           <NA>     41.93
+NA.28             <NA>           <NA>        NA
+NA.29             <NA>           <NA>        NA
+NA.30             <NA>           <NA>        NA
+NA.31             <NA>           <NA>        NA
+NA.32             <NA>           <NA>        NA
+NA.33             <NA>           <NA>        NA
+NA.34             <NA>           <NA>        NA
+NA.35             <NA>           <NA>        NA
+NA.36             <NA>           <NA>        NA
+NA.37             <NA>           <NA>        NA
+NA.38             <NA>           <NA>        NA
+NA.39             <NA>           <NA>        NA
+NA.40             <NA>           <NA>        NA
+NA.41             <NA>           <NA>        NA
+NA.42             <NA>           <NA>        NA
+NA.43             <NA>           <NA>        NA
+NA.44             <NA>           <NA>        NA
+NA.45             <NA>           <NA>        NA
+NA.46             <NA>           <NA>        NA
+NA.47             <NA>           <NA>        NA
+NA.48             <NA>           <NA>        NA
+NA.49             <NA>           <NA>        NA
+NA.50             <NA>           <NA>        NA
+      start_lng end_lat end_lng member_casual
+NA           NA      NA      NA          <NA>
+NA.1         NA      NA      NA          <NA>
+NA.2         NA      NA      NA          <NA>
+NA.3         NA      NA      NA          <NA>
+NA.4         NA      NA      NA          <NA>
+NA.5         NA      NA      NA          <NA>
+NA.6         NA      NA      NA          <NA>
+NA.7         NA      NA      NA          <NA>
+NA.8         NA      NA      NA          <NA>
+NA.9         NA      NA      NA          <NA>
+NA.10        NA      NA      NA          <NA>
+NA.11        NA      NA      NA          <NA>
+NA.12        NA      NA      NA          <NA>
+NA.13        NA      NA      NA          <NA>
+NA.14        NA      NA      NA          <NA>
+NA.15        NA      NA      NA          <NA>
+NA.16        NA      NA      NA          <NA>
+NA.17        NA      NA      NA          <NA>
+NA.18        NA      NA      NA          <NA>
+NA.19        NA      NA      NA          <NA>
+NA.20        NA      NA      NA          <NA>
+NA.21        NA      NA      NA          <NA>
+NA.22        NA      NA      NA          <NA>
+NA.23        NA      NA      NA          <NA>
+NA.24        NA      NA      NA          <NA>
+NA.25        NA      NA      NA          <NA>
+NA.26        NA      NA      NA          <NA>
+NA.27        NA      NA      NA          <NA>
+29       -87.73   41.93  -87.71        member
+NA.28        NA      NA      NA          <NA>
+NA.29        NA      NA      NA          <NA>
+NA.30        NA      NA      NA          <NA>
+NA.31        NA      NA      NA          <NA>
+NA.32        NA      NA      NA          <NA>
+NA.33        NA      NA      NA          <NA>
+NA.34        NA      NA      NA          <NA>
+NA.35        NA      NA      NA          <NA>
+NA.36        NA      NA      NA          <NA>
+NA.37        NA      NA      NA          <NA>
+NA.38        NA      NA      NA          <NA>
+NA.39        NA      NA      NA          <NA>
+NA.40        NA      NA      NA          <NA>
+NA.41        NA      NA      NA          <NA>
+NA.42        NA      NA      NA          <NA>
+NA.43        NA      NA      NA          <NA>
+NA.44        NA      NA      NA          <NA>
+NA.45        NA      NA      NA          <NA>
+NA.46        NA      NA      NA          <NA>
+NA.47        NA      NA      NA          <NA>
+NA.48        NA      NA      NA          <NA>
+NA.49        NA      NA      NA          <NA>
+NA.50        NA      NA      NA          <NA>
+            date month  day year day_of_week
+NA          <NA>  <NA> <NA> <NA>        <NA>
+NA.1        <NA>  <NA> <NA> <NA>        <NA>
+NA.2        <NA>  <NA> <NA> <NA>        <NA>
+NA.3        <NA>  <NA> <NA> <NA>        <NA>
+NA.4        <NA>  <NA> <NA> <NA>        <NA>
+NA.5        <NA>  <NA> <NA> <NA>        <NA>
+NA.6        <NA>  <NA> <NA> <NA>        <NA>
+NA.7        <NA>  <NA> <NA> <NA>        <NA>
+NA.8        <NA>  <NA> <NA> <NA>        <NA>
+NA.9        <NA>  <NA> <NA> <NA>        <NA>
+NA.10       <NA>  <NA> <NA> <NA>        <NA>
+NA.11       <NA>  <NA> <NA> <NA>        <NA>
+NA.12       <NA>  <NA> <NA> <NA>        <NA>
+NA.13       <NA>  <NA> <NA> <NA>        <NA>
+NA.14       <NA>  <NA> <NA> <NA>        <NA>
+NA.15       <NA>  <NA> <NA> <NA>        <NA>
+NA.16       <NA>  <NA> <NA> <NA>        <NA>
+NA.17       <NA>  <NA> <NA> <NA>        <NA>
+NA.18       <NA>  <NA> <NA> <NA>        <NA>
+NA.19       <NA>  <NA> <NA> <NA>        <NA>
+NA.20       <NA>  <NA> <NA> <NA>        <NA>
+NA.21       <NA>  <NA> <NA> <NA>        <NA>
+NA.22       <NA>  <NA> <NA> <NA>        <NA>
+NA.23       <NA>  <NA> <NA> <NA>        <NA>
+NA.24       <NA>  <NA> <NA> <NA>        <NA>
+NA.25       <NA>  <NA> <NA> <NA>        <NA>
+NA.26       <NA>  <NA> <NA> <NA>        <NA>
+NA.27       <NA>  <NA> <NA> <NA>        <NA>
+29    2023-04-21    04   21 2023      Friday
+NA.28       <NA>  <NA> <NA> <NA>        <NA>
+NA.29       <NA>  <NA> <NA> <NA>        <NA>
+NA.30       <NA>  <NA> <NA> <NA>        <NA>
+NA.31       <NA>  <NA> <NA> <NA>        <NA>
+NA.32       <NA>  <NA> <NA> <NA>        <NA>
+NA.33       <NA>  <NA> <NA> <NA>        <NA>
+NA.34       <NA>  <NA> <NA> <NA>        <NA>
+NA.35       <NA>  <NA> <NA> <NA>        <NA>
+NA.36       <NA>  <NA> <NA> <NA>        <NA>
+NA.37       <NA>  <NA> <NA> <NA>        <NA>
+NA.38       <NA>  <NA> <NA> <NA>        <NA>
+NA.39       <NA>  <NA> <NA> <NA>        <NA>
+NA.40       <NA>  <NA> <NA> <NA>        <NA>
+NA.41       <NA>  <NA> <NA> <NA>        <NA>
+NA.42       <NA>  <NA> <NA> <NA>        <NA>
+NA.43       <NA>  <NA> <NA> <NA>        <NA>
+NA.44       <NA>  <NA> <NA> <NA>        <NA>
+NA.45       <NA>  <NA> <NA> <NA>        <NA>
+NA.46       <NA>  <NA> <NA> <NA>        <NA>
+NA.47       <NA>  <NA> <NA> <NA>        <NA>
+NA.48       <NA>  <NA> <NA> <NA>        <NA>
+NA.49       <NA>  <NA> <NA> <NA>        <NA>
+NA.50       <NA>  <NA> <NA> <NA>        <NA>
+      ride_length
+NA             NA
+NA.1           NA
+NA.2           NA
+NA.3           NA
+NA.4           NA
+NA.5           NA
+NA.6           NA
+NA.7           NA
+NA.8           NA
+NA.9           NA
+NA.10          NA
+NA.11          NA
+NA.12          NA
+NA.13          NA
+NA.14          NA
+NA.15          NA
+NA.16          NA
+NA.17          NA
+NA.18          NA
+NA.19          NA
+NA.20          NA
+NA.21          NA
+NA.22          NA
+NA.23          NA
+NA.24          NA
+NA.25          NA
+NA.26          NA
+NA.27          NA
+29            480
+NA.28          NA
+NA.29          NA
+NA.30          NA
+NA.31          NA
+NA.32          NA
+NA.33          NA
+NA.34          NA
+NA.35          NA
+NA.36          NA
+NA.37          NA
+NA.38          NA
+NA.39          NA
+NA.40          NA
+NA.41          NA
+NA.42          NA
+NA.43          NA
+NA.44          NA
+NA.45          NA
+NA.46          NA
+NA.47          NA
+NA.48          NA
+NA.49          NA
+NA.50          NA
+ [ reached 'max' / getOption("max.print") -- omitted 5749804 rows ]
+> all_trips_v2 <- all_trips[!(all_trips$start_station_name == "HQ QR" | all_trips$ride_length<0),]
+> #conduct analysis
+> mean(all_trips_v2$ride_length, na.rm = TRUE)#straight average (total ride length / rides)
+[1] 1170.127
+> median(all_trips_v2$ride_length, na.rm = TRUE)#midpoint number in the ascending array of ride lengths
+[1] 589
+> 
+> max(all_trips_v2$ride_length, na.rm = TRUE)#longest ride
+[1] 5909344
+> min(all_trips_v2$ride_length, na.rm = TRUE)#shortest_ride
+[1] 0
+> knitr::include_graphics(here::here("mean median max min of all_trips.png"))
+Error in loadNamespace(x) : there is no package called ‘here’
+> visualize members and casuals by the total ride taken(ride count)
+Error: unexpected symbol in "visualize members"
+> #visualize members and causuals by the total ride taken(ride count)
+> all_trips_v2 %>% 
++     group_by(member_casual) %>% 
++     summarise(ride_count = length(ride_id)) %>%
++     ggplot(aes(x = member_casual, y = ride_count, fill = member_casual)) +
++     geom_col(position = "dodge") +
++     labs(title ="Total rides taken (ride_count) of Members and Casual riders") +
++     geom_col(width=0.5, position = position_dodge(width=0.5)) +
++     scale_y_continuous(labels = function(x) format(x, scientific = FALSE))
+Error in all_trips_v2 %>% group_by(member_casual) %>% summarise(ride_count = length(ride_id)) %>%  : 
+  could not find function "%>%"
+> install.package("dplyr")
+Error in install.package("dplyr") : 
+  could not find function "install.package"
+> install.packages("dplyr")
+WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+Installing package into ‘C:/Users/garre/AppData/Local/R/win-library/4.3’
+(as ‘lib’ is unspecified)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.3/dplyr_1.1.4.zip'
+Content type 'application/zip' length 1560200 bytes (1.5 MB)
+downloaded 1.5 MB
+
+package ‘dplyr’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\garre\AppData\Local\Temp\RtmpmQuW9E\downloaded_packages
+> all_trips_v2 %>% 
++     group_by(member_casual) %>% 
++     summarise(ride_count = length(ride_id)) %>%
++     ggplot(aes(x = member_casual, y = ride_count, fill = member_casual)) +
++     geom_col(position = "dodge") +
++     labs(title ="Total rides taken (ride_count) of Members and Casual riders") +
++     geom_col(width=0.5, position = position_dodge(width=0.5)) +
++     scale_y_continuous(labels = function(x) format(x, scientific = FALSE))
+Error in all_trips_v2 %>% group_by(member_casual) %>% summarise(ride_count = length(ride_id)) %>%  : 
+  could not find function "%>%"
+> library(dplyr)
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+> all_trips_v2 %>% 
++     group_by(member_casual) %>% 
++     summarise(ride_count = length(ride_id)) %>%
++     ggplot(aes(x = member_casual, y = ride_count, fill = member_casual)) +
++     geom_col(position = "dodge") +
++     labs(title ="Total rides taken (ride_count) of Members and Casual riders") +
++     geom_col(width=0.5, position = position_dodge(width=0.5)) +
++     scale_y_continuous(labels = function(x) format(x, scientific = FALSE))
+Error in ggplot(., aes(x = member_casual, y = ride_count, fill = member_casual)) : 
+  could not find function "ggplot"
+> install.packages("ggplot2")
+WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+Installing package into ‘C:/Users/garre/AppData/Local/R/win-library/4.3’
+(as ‘lib’ is unspecified)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.3/ggplot2_3.5.1.zip'
+Content type 'application/zip' length 4953509 bytes (4.7 MB)
+downloaded 4.7 MB
+
+package ‘ggplot2’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\garre\AppData\Local\Temp\RtmpmQuW9E\downloaded_packages
+> library(ggplot2)
+> all_trips_v2 %>% 
++     group_by(member_casual) %>% 
++     summarise(ride_count = length(ride_id)) %>%
++     ggplot(aes(x = member_casual, y = ride_count, fill = member_casual)) +
++     geom_col(position = "dodge") +
++     labs(title ="Total rides taken (ride_count) of Members and Casual riders") +
++     geom_col(width=0.5, position = position_dodge(width=0.5)) +
++     scale_y_continuous(labels = function(x) format(x, scientific = FALSE))
+> #average time ride by each day for members versus casual users
+> aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual 
++           + all_trips_v2$day_of_week
++           , FUN = mean)
+   all_trips_v2$member_casual
+1                      casual
+2                      member
+3                      casual
+4                      member
+5                      casual
+6                      member
+7                      casual
+8                      member
+9                      casual
+10                     member
+11                     casual
+12                     member
+13                     casual
+14                     member
+   all_trips_v2$day_of_week all_trips_v2$ride_length
+1                    Friday                1818.9185
+2                    Friday                 767.5203
+3                    Monday                1837.1612
+4                    Monday                 741.0809
+5                  Saturday                2115.3648
+6                  Saturday                 863.4194
+7                    Sunday                2175.2447
+8                    Sunday                 872.8500
+9                  Thursday                1636.5491
+10                 Thursday                 743.2305
+11                  Tuesday                1682.3359
+12                  Tuesday                 753.9396
+13                Wednesday                1604.1947
+14                Wednesday                 749.3449
+> all_trips_v2$day_of_week <- ordered(all_trips_v2$day_of_week, levels=c("Sunday"
++                                                                        , "Monday"
++                                                                        , "Tuesday"
++                                                                        , "Wednesday"
++                                                                        , "Thursday"
++                                                                        , "Friday"
++                                                                        , "Saturday"))
+> aggregate(all_trips_v2$ride_length ~ all_trips_v2$member_casual 
++           + all_trips_v2$day_of_week
++           , FUN = mean)
+   all_trips_v2$member_casual
+1                      casual
+2                      member
+3                      casual
+4                      member
+5                      casual
+6                      member
+7                      casual
+8                      member
+9                      casual
+10                     member
+11                     casual
+12                     member
+13                     casual
+14                     member
+   all_trips_v2$day_of_week all_trips_v2$ride_length
+1                    Sunday                2175.2447
+2                    Sunday                 872.8500
+3                    Monday                1837.1612
+4                    Monday                 741.0809
+5                   Tuesday                1682.3359
+6                   Tuesday                 753.9396
+7                 Wednesday                1604.1947
+8                 Wednesday                 749.3449
+9                  Thursday                1636.5491
+10                 Thursday                 743.2305
+11                   Friday                1818.9185
+12                   Friday                 767.5203
+13                 Saturday                2115.3648
+14                 Saturday                 863.4194
+> all_trips_v2 %>% 
++     mutate(weekday = wday(started_at, label = TRUE)) %>%
++     group_by(member_casual, weekday) %>%  
++     summarise(number_of_rides = n(), average_duration = mean(ride_length)) %>%
++     arrange(member_casual, weekday)   
+Error in `mutate()`:
+ℹ In argument: `weekday = wday(started_at,
+  label = TRUE)`.
+Caused by error in `wday()`:
+! could not find function "wday"
+Run `rlang::last_trace()` to see where the error occurred.
+> install.packages("wday"
++ )
+WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+Installing package into ‘C:/Users/garre/AppData/Local/R/win-library/4.3’
+(as ‘lib’ is unspecified)
+Warning in install.packages :
+  package ‘wday’ is not available for this version of R
+
+A version of this package for your version of R might be available elsewhere,
+see the ideas at
+https://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Installing-packages
+> all_trips_v2 %>% 
++     mutate(weekday = wday(started_at, label = TRUE)) %>%
++     group_by(member_casual, weekday) %>%  
++     summarise(number_of_rides = n(), average_duration = mean(ride_length)) %>%
++     arrange(member_casual, weekday)   
+Error in `mutate()`:
+ℹ In argument: `weekday = wday(started_at,
+  label = TRUE)`.
+Caused by error in `wday()`:
+! could not find function "wday"
+Run `rlang::last_trace()` to see where the error occurred.
+> library(wday)
+Error in library(wday) : there is no package called ‘wday’
+> install.packages("lubridate")
+WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+Installing package into ‘C:/Users/garre/AppData/Local/R/win-library/4.3’
+(as ‘lib’ is unspecified)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.3/lubridate_1.9.3.zip'
+Content type 'application/zip' length 984878 bytes (961 KB)
+downloaded 961 KB
+
+package ‘lubridate’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\garre\AppData\Local\Temp\RtmpmQuW9E\downloaded_packages
+> library(lubridate)
+
+Attaching package: ‘lubridate’
+
+The following objects are masked from ‘package:base’:
+
+    date, intersect, setdiff, union
+
+> all_trips_v2 %>% 
++     mutate(weekday = wday(started_at, label = TRUE)) %>%
++     group_by(member_casual, weekday) %>%  
++     summarise(number_of_rides = n(), average_duration = mean(ride_length)) %>%
++     arrange(member_casual, weekday)   
+`summarise()` has grouped output by 'member_casual'.
+You can override using the `.groups` argument.
+# A tibble: 15 × 4
+# Groups:   member_casual [3]
+   member_casual weekday number_of_rides
+   <chr>         <ord>             <int>
+ 1 casual        Sun              285166
+ 2 casual        Mon              200034
+ 3 casual        Tue              205559
+ 4 casual        Wed              207689
+ 5 casual        Thu              229475
+ 6 casual        Fri              261133
+ 7 casual        Sat              354045
+ 8 member        Sun              341692
+ 9 member        Mon              431525
+10 member        Tue              492041
+11 member        Wed              505557
+12 member        Thu              514412
+13 member        Fri              447479
+14 member        Sat              399773
+15 NA            NA               874276
+# ℹ 1 more variable: average_duration <dbl>
+> #visualize number of rides taken by member and casual riders by days of the week
+> all_trips_v2 %>% 
++     mutate(weekday = wday(started_at, label = TRUE)) %>% 
++     group_by(member_casual, weekday) %>% 
++     summarise(number_of_rides = n()
++               ,average_duration = mean(ride_length)) %>% 
++     arrange(member_casual, weekday)  %>% 
++     ggplot(aes(x = weekday, y = average_duration, fill = member_casual)) +
++     geom_col(position = "dodge") +
++     labs(title ="Average duration of Members and Casual riders Vs. Day of the week") +
++     geom_col(width=0.5, position = position_dodge(width=0.5)) +
++     scale_y_continuous(labels = function(x) format(x, scientific = FALSE))
+`summarise()` has grouped output by 'member_casual'.
+You can override using the `.groups` argument.
+Warning messages:
+1: Removed 1 row containing missing values or values
+outside the scale range (`geom_col()`). 
+2: Removed 1 row containing missing values or values
+outside the scale range (`geom_col()`). 
+> #visualization for total rides by members and casual riders by month
+> all_trips_v2 %>%  
++     group_by(member_casual, month) %>% 
++     summarise(number_of_rides = n(),.groups="drop") %>% 
++     arrange(member_casual, month)  %>% 
++     ggplot(aes(x = month, y = number_of_rides, fill = member_casual)) +
++     labs(title ="Total rides by Members and Casual riders by Month") +
++     theme(axis.text.x = element_text(angle = 45)) +
++     geom_col(width=0.5, position = position_dodge(width=0.5)) +
++     scale_y_continuous(labels = function(x) format(x, scientific = FALSE))
+> #compare members and casual riders depending on ride distance
+> all_trips_v2 %>% 
++     group_by(member_casual) %>% drop_na() %>%
++     summarise(average_ride_length = mean(ride_length)) %>%
++     ggplot() + 
++     geom_col(mapping= aes(x= member_casual,y= average_ride_length,fill=member_casual), show.legend = FALSE)+
++     labs(title = "Mean distance traveled by Members and Casual riders")
+Error in drop_na(.) : could not find function "drop_na"
+> install.packages("drop_na")
+WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+Installing package into ‘C:/Users/garre/AppData/Local/R/win-library/4.3’
+(as ‘lib’ is unspecified)
+Warning in install.packages :
+  package ‘drop_na’ is not available for this version of R
+
+A version of this package for your version of R might be available elsewhere,
+see the ideas at
+https://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Installing-packages
+> all_trips_v2 %>% 
++     group_by(member_casual) %>% drop_na() %>%
++     summarise(average_ride_length = mean(ride_length)) %>%
++     ggplot() + 
++     geom_col(mapping= aes(x= member_casual,y= average_ride_length,fill=member_casual), show.legend = FALSE)+
++     labs(title = "Mean distance traveled by Members and Casual riders")
+Error in drop_na(.) : could not find function "drop_na"
+> install.packages("tidyr")
+WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+Installing package into ‘C:/Users/garre/AppData/Local/R/win-library/4.3’
+(as ‘lib’ is unspecified)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.3/tidyr_1.3.1.zip'
+Content type 'application/zip' length 1266881 bytes (1.2 MB)
+downloaded 1.2 MB
+
+package ‘tidyr’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\garre\AppData\Local\Temp\RtmpmQuW9E\downloaded_packages
+> library(tidyr)
+> all_trips_v2 %>% 
++     group_by(member_casual) %>% drop_na() %>%
++     summarise(average_ride_length = mean(ride_length)) %>%
++     ggplot() + 
++     geom_col(mapping= aes(x= member_casual,y= average_ride_length,fill=member_casual), show.legend = FALSE)+
++     labs(title = "Mean distance traveled by Members and Casual riders")
